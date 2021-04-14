@@ -1,0 +1,14 @@
+server:
+  port: 2001
+
+# eureka配置
+eureka:
+  instance:
+    hostname: 127.0.0.1
+  # 以下两条声明自己是个服务端
+  client:
+    registerWithEureka: false
+    fetchRegistry: false
+    # 服务器的地址
+    serviceUrl:
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
